@@ -1,19 +1,12 @@
-#Atividade 1: Subir uma máquina virtual, usando Vagrant, com MySQL instalado
-#que esteja acessível no host da máquina na porta 3306.  
-
-#Declaração do Vagrant, utilizando a versão 2 da linguagem.
 Vagrant.configure("2") do |config|
 
-    #Setando qual imagem (SO) a VM terá, neste caso: Ubuntu 12;04
-    config.vm.box = "hashicorp/precise64";
+  config.vm.box = "hashicorp/precise64";
 
-    #Mapeando a porta 3306 da VM para 3306 da minha localhost
-    config.vm.network "forwarded_port", guest: 3306, host: 3306
+  config.vm.network "forwarded_port", guest: 3306, host: 3306
 
-    #Provision: bloco de código para executar dentro do terminal linux
-    config.vm.provision "shell", inline: <<-SHELL
-        apt-get update
-        apt-get install -y mysql-server-5.7
-    SHELL
-            
+  config.vm.provision "shell", inline: <<-SHELL
+    apt-get update
+    apt-get install -y mysql-server
+  SHELL
+
 end
