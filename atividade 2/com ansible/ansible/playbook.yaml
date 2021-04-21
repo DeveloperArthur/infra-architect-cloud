@@ -6,8 +6,3 @@
           name: mysql-server
           state: latest
         become: yes
-      - name: Assegurar MySQL iniciado
-        service:
-          name: mysql-server
-          state: started
-        become: yes
