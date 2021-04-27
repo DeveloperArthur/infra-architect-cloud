@@ -6,5 +6,5 @@ docker build -t first-dockerfile .
 
 Suba o Container:
 ````
-docker run -d --network=host first-dockerfile
+docker run -d -p 8080:80 first-dockerfile
 ````
