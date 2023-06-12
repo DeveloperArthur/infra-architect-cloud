@@ -13,5 +13,6 @@ inventario = informa qual o ip da máquina que precisa ser configurado
 
 playbook.yaml = informa como configurar e quais softwares instalar
 
+e o comando `ansible-playbook -i /home/testadmin/ansible/inventario /home/testadmin/ansible/playbook.yaml` executa o playbook e configurar a máquina de produção
 
 dessa forma a máquina ansible dispara comandos para a máquina de produção configurando ela.
