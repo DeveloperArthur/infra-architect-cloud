@@ -1,3 +1,5 @@
 Subir dois pods, nginx e mysql, mapeando a porta 80 do nginx para acesso externo ao cluster e permitir que o contêiner do nginx tenha comunicação de rede no contêiner mysql pela porta 3306. 
 A atividade pode ser feita localmente (minikube), AKS (Azure), EKS (AWS) ou no GKE (GCP). 
 Se quiser criar o cluster nuvem Kubernetes com Terraform é opcional. 
+
+Resposta detalhada: Subindo dois PODS, um de Servidor Web (Nginx) e um de Banco de Dados (MySQL) e um Load Balancer para deixar o Nginx com acesso externo na porta 80, tudo isso no Kubernetes da Azure através da Infraestrutura como Código utilizando Terraform e Kubernetes YAML
