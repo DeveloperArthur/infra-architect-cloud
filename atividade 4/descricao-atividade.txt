@@ -4,9 +4,11 @@ Se quiser criar o cluster nuvem Kubernetes com Terraform é opcional.
 
 Resposta detalhada: Subindo dois PODS, um de Servidor Web (Nginx) e um de Banco de Dados (MySQL) e um Load Balancer para deixar o Nginx com acesso externo na porta 80, tudo isso no Kubernetes da Azure através da Infraestrutura como Código utilizando Terraform pra criar o cluster e Kubernetes YAML pra criar os pods
 
-Para rodar, basta executar: 
-$ kubeclt apply -f . 
-dentro do diretorio pods
+Para rodar, basta executar:
+$ terraform apply #para criar o cluster Kubernetes
 
-lista os pods:
+dentro do diretorio pods:
+$ kubeclt apply -f . #para criar os pods 
+
+listar os pods:
 $ kubeclt get all

@@ -1,0 +1,18 @@
+No dia a dia, é comum criar pods no Kubernetes sem se preocupar com em qual cluster específico ou em qual node eles estão sendo executados. Isso porque o Kubernetes gerencia a distribuição dos pods entre os nós de forma automática, com base nas configurações de agendamento e nas necessidades de recursos dos pods.
+
+O Kubernetes tentará otimizar a distribuição dos pods nos nodes para melhorar a eficiência de recursos e a disponibilidade da aplicação, se houver capacidade suficiente em um node para acomodar vários pods, o Kubernetes pode implantar vários pods no mesmo node. No entanto, isso depende das políticas de agendamento configuradas no cluster e das restrições de recursos dos próprios pods.
+
+Os desenvolvedores e administradores não precisam se preocupar com os detalhes de em qual node ou em qual cluster os pods estão sendo executados, pois o Kubernetes cuida disso de forma transparente. No entanto, é importante ter conhecimento desses aspectos para entender o funcionamento do Kubernetes e poder fazer ajustes e otimizações quando necessário.
+
+Quando você cria um cluster Kubernetes, como no Azure Kubernetes Service (AKS), todos os pods que você implantar serão executados dentro desse único cluster, a menos que você tenha configurado algo diferente de forma explícita.
+
+Criam-se N clusters por diversos motivos:
+- limites de cluster (algumas nuvens tem limite de cluster)
+- diferentes ambientes, 
+- escalabilidade (À medida que a demanda por recursos aumenta, pode ser mais fácil escalar horizontalmente criando novos clusters em vez de dimensionar um único cluster verticalmente.)
+- separar cluster por squads, ou por dominio ()
+- gerenciamento simplificado (Em alguns casos, ter clusters menores e mais especializados pode simplificar o gerenciamento, especialmente em organizações grandes com várias equipes e requisitos diferentes.)
+
+A decisão de usar vários clusters Kubernetes depende dos requisitos específicos da sua aplicação, da organização e da infraestrutura em que ela está sendo executada.
+
+É possível determinar em qual cluster um determinado pod vai rodar, pra isso é necessario configurar o contexto do kubectl para apontar para o cluster desejado e, em seguida, aplicar o arquivo YAML.
