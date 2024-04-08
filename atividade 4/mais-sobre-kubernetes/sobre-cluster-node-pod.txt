@@ -16,3 +16,7 @@ Criam-se N clusters por diversos motivos:
 A decisão de usar vários clusters Kubernetes depende dos requisitos específicos da sua aplicação, da organização e da infraestrutura em que ela está sendo executada.
 
 É possível determinar em qual cluster um determinado pod vai rodar, pra isso é necessario configurar o contexto do kubectl para apontar para o cluster desejado e, em seguida, aplicar o arquivo YAML.
+
+- Deployment é a configuração que representa a aplicação, você não escala pod, você escala deployment
+- Service é pra configurar a comunicação entre os pods, existem diversos tipos de services
+por exemplo, o tipo LoadBalancer é para o service distribuir requests entre os pods
